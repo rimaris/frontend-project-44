@@ -1,8 +1,8 @@
 import askQuestion from '../src/index.js';
 
-const MAX_VALUE = 100;
+export const MAX_VALUE = 100;
 
-const generateRandomNumber = () => Math.ceil(Math.random() * MAX_VALUE);
+export const generateRandomNumber = () => Math.ceil(Math.random() * MAX_VALUE);
 
 const playOneRound = () => {
   const questionNumber = generateRandomNumber();
