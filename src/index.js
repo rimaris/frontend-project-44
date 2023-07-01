@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import greetUser from './cli.js';
 
 export const askQuestion = (questionText, correctAnswer) => {
   console.log(`Question: ${questionText}`);
@@ -12,3 +13,16 @@ export const askQuestion = (questionText, correctAnswer) => {
 };
 
 export const generateRandomNumber = (maxValue) => Math.floor(Math.random() * maxValue);
+
+export const playGame = (gameRules, playOneRound) => {
+  const userName = greetUser();
+  console.log(gameRules);
+  for (let i = 0; i < 3; i += 1) {
+    const isCorrect = playOneRound();
+    if (!isCorrect) {
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+};
