@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/rimaris/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/rimaris/frontend-project-44/actions)
+[![Code Climate](https://codeclimate.com/github/rimaris/frontend-project-44.png)](https://codeclimate.com/github/rimaris/frontend-project-44)
 ## Brain-even
 [![asciicast](https://asciinema.org/a/trNwL8WdKOaWjEpwjCYEOQunq.svg)](https://asciinema.org/a/trNwL8WdKOaWjEpwjCYEOQunq)
 ## Brain-calc
