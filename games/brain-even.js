@@ -1,4 +1,4 @@
-import { askQuestion, generateRandomNumber } from '../src/index.js';
+import { generateRandomNumber } from '../src/index.js';
 
 const MAX_VALUE = 100;
 
@@ -17,9 +17,4 @@ const generateQuestion = () => {
   };
 };
 
-const playOneRound = () => {
-  const question = generateQuestion();
-  return askQuestion(question.question, question.correctAnswer.toString());
-};
-
-export default playOneRound;
+export default generateQuestion;

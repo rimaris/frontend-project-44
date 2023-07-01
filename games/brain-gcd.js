@@ -1,8 +1,10 @@
-import { askQuestion } from '../src/index.js';
+import { generateRandomNumber } from '../src/index.js';
+
+const MAX_NUMBER = 100;
 
 const generateQuestion = () => {
-  const firstNumber = Math.floor(Math.random() * 100) + 1;
-  const secondNumber = Math.floor(Math.random() * 100) + 1;
+  const firstNumber = generateRandomNumber(MAX_NUMBER) + 1;
+  const secondNumber = generateRandomNumber(MAX_NUMBER) + 1;
 
   const min = Math.min(firstNumber, secondNumber);
   let maxDivisor = 1;
@@ -18,9 +20,4 @@ const generateQuestion = () => {
   };
 };
 
-const playOneRound = () => {
-  const question = generateQuestion();
-  return askQuestion(question.question, question.correctAnswer.toString());
-};
-
-export default playOneRound;
+export default generateQuestion;

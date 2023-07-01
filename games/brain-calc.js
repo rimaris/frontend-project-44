@@ -1,10 +1,12 @@
-import { askQuestion } from '../src/index.js';
+import { generateRandomNumber } from '../src/index.js';
 
-const generateRandomMathOperation = () => {
+const MAX_NUMBER = 40;
+
+const generateQuestion = () => {
   const operators = ['+', '-', '*'];
-  const operator = operators[Math.floor(Math.random() * operators.length)];
-  const firstNumber = Math.floor(Math.random() * 40) + 1;
-  const secondNumber = Math.floor(Math.random() * 40) + 1;
+  const operator = operators[generateRandomNumber(operators.length)];
+  const firstNumber = generateRandomNumber(MAX_NUMBER) + 1;
+  const secondNumber = generateRandomNumber(MAX_NUMBER) + 1;
 
   let correctAnswer;
   if (operator === '+') {
@@ -22,9 +24,4 @@ const generateRandomMathOperation = () => {
   };
 };
 
-const playOneRound = () => {
-  const question = generateRandomMathOperation();
-  return askQuestion(question.question, question.correctAnswer.toString());
-};
-
-export default playOneRound;
+export default generateQuestion;

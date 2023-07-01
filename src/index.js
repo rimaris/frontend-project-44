@@ -14,11 +14,12 @@ export const askQuestion = (questionText, correctAnswer) => {
 
 export const generateRandomNumber = (maxValue) => Math.floor(Math.random() * maxValue);
 
-export const playGame = (gameRules, playOneRound) => {
+export const playGame = (gameRules, generateQuestion) => {
   const userName = greetUser();
   console.log(gameRules);
   for (let i = 0; i < 3; i += 1) {
-    const isCorrect = playOneRound();
+    const question = generateQuestion();
+    const isCorrect = askQuestion(question.question, question.correctAnswer.toString());
     if (!isCorrect) {
       console.log(`Let's try again, ${userName}!`);
       return;
