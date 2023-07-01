@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const askQuestion = (questionText, correctAnswer) => {
+export const askQuestion = (questionText, correctAnswer) => {
   console.log(`Question: ${questionText}`);
   const userAnswer = readlineSync.question('Your answer: ');
   if (userAnswer === correctAnswer) {
@@ -11,4 +11,4 @@ const askQuestion = (questionText, correctAnswer) => {
   return false;
 };
 
-export default askQuestion;
+export const generateRandomNumber = (maxValue) => Math.floor(Math.random() * maxValue);

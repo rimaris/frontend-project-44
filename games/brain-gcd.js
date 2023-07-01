@@ -1,4 +1,4 @@
-import askQuestion from '../src/index.js';
+import { askQuestion } from '../src/index.js';
 
 const generateQuestion = () => {
   const firstNumber = Math.floor(Math.random() * 100) + 1;
