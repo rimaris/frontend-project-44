@@ -2,7 +2,7 @@ import { askQuestion, generateRandomNumber } from '../src/index.js';
 
 const MAX_VALUE = 100;
 
-const playOneRound = () => {
+const generateQuestion = () => {
   const questionNumber = generateRandomNumber(MAX_VALUE);
   let correctAnswer;
   const isEven = questionNumber % 2 === 0;
@@ -11,7 +11,15 @@ const playOneRound = () => {
   } else {
     correctAnswer = 'no';
   }
-  return askQuestion(questionNumber, correctAnswer);
+
+  return {
+    question: questionNumber.toString(), correctAnswer,
+  };
+};
+
+const playOneRound = () => {
+  const question = generateQuestion();
+  return askQuestion(question.question, question.correctAnswer.toString());
 };
 
 export default playOneRound;
